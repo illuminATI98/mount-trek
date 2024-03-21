@@ -1,5 +1,5 @@
 import './App.scss'
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import { Home } from './container';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <section className='app__container'>
         <Home />
       </section>
-
+      <Footer />
     </div>
   )
 }

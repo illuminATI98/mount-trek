@@ -4,10 +4,18 @@ import { images } from "../../constants";
 import {HiMenu, HiX} from "react-icons/hi";
 import { FaInstagram, FaFacebookSquare, FaPhone  } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
+
+  const openFacebookPage = () => {
+    window.open('https://www.facebook.com/groups/mounttrek', '_blank');
+  };
+
+  const openInstagramPage = () => {
+      window.open('https://www.instagram.com/mounttrek.eu/', '_blank');
+  };
 
   return (
     <nav className='app__navbar'>
@@ -18,8 +26,8 @@ const Navbar = () => {
           <span> <FaPhone /> +36 1 234 5678</span>
         </div>
         <div className='app__navbar-socials'>
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaFacebookSquare /></a>
+          <a onClick={openInstagramPage}><FaInstagram /></a>
+          <a onClick={openFacebookPage}><FaFacebookSquare /></a>
         </div>
       </menu>
 
@@ -38,21 +46,25 @@ const Navbar = () => {
         </ul>
         <div className='app__navbar-menu'>
           <HiMenu onClick={() => setToggle(true)}/>
-          {toggle && (
-            <motion.div
-            animate={{ x: [300, 0] }}
-            transition={{ type: "spring", stiffness: 20, damping: 10}}
-            >
-              <HiX onClick={() => setToggle(false)} />
-              <ul className='app__navbar-links'>
-                {["Kezdőlap", "Túrák", "Rólunk", "Információk", "Galéria", "Kapcsolat"].map((item) => (
-                  <li key={`link-${item}`}>
-                    <a href={`#${item}`} onClick={() => setToggle(false)}>{item}</a>
-                  </li>
-                  ))}
-              </ul>
-            </motion.div>
-          )}
+          <AnimatePresence>
+            {toggle && (
+              <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 10 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 40, duration: 0.5 }}
+              >
+                <HiX onClick={() => setToggle(false)} />
+                <ul className='app__navbar-links'>
+                  {["Kezdőlap", "Túrák", "Rólunk", "Információk", "Galéria", "Kapcsolat"].map((item) => (
+                    <li key={`link-${item}`}>
+                      <a href="#" onClick={() => setToggle(false)}>{item}</a>
+                    </li>
+                    ))}
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </menu>
     </nav>

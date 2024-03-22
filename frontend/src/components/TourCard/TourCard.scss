@@ -1,0 +1,48 @@
+.tourCard {
+  width: 300px;
+  border-radius: 8px;
+  background-color: var(--brown-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .tourCard-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+  }
+
+  .tourCard-content {
+      padding: 20px;
+  }
+
+  .tourCard-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+  }
+
+  .tourCard-description {
+      font-size: 1rem;
+      margin-bottom: 10px;
+  }
+
+  .tourCard-price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .tourCard-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+          background-color: #0056b3;
+      }
+  }
+}

@@ -1,34 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 import './Header.scss'; 
-import { images } from "../../constants";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
-  const [scrollY, setScrollY] = useState(0);
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ["start start", "end start"],
+    });
+    const background1Y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+    const background2Y = useTransform(scrollYProgress, [0, 1], ["0%", "70%"]);
+    const textX = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
+  
+    return (
+      <div
+        ref={ref}
+        className="app__header"
+      >
+        <motion.div
+          className="app__headerbg1" 
+          style={{
+              y: background1Y,
+            }}
+        />
+        <motion.div
+          className="app__headerbg2"
+          style={{
+              y: background2Y,
+            }}
+        />
+        <div
+          className="app__headerbg3"
+        />
 
-  useEffect(() => {
-      const handleScroll = () => {
-          setScrollY(window.scrollY);
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
-  }, []);
-
-  return (
-      <div className="app__header">
-          <motion.div className="header-photo" style={{ y: -scrollY * 0.5 }}>
-              {}
-          </motion.div>
-          <div className="welcome-text">
-              <h1>Welcome to MountTrek</h1>
-              <p>Scroll down to explore more</p>
-          </div>
+        <motion.div
+            style={{ x: textX }}
+            className="app__header-text" 
+        >
+            <h1>Welcome to MountTrek</h1>
+            <h2>Scroll down to explore</h2>
+        </motion.div>
       </div>
-  );
+    );
 }
 
 export default Header

@@ -10,7 +10,7 @@
   box-shadow: rgba(0, 0, 0, 0.9) 0px 22px 70px 5px;
 }
 .footer-bg {
-  background-image: url('../../assets/Footerbg.jpg');
+  background-image: url('../../assets/footerbg.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -20,7 +20,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  
+  margin-top: 1rem;
   .footer-contacts {
     display: flex;
     flex-direction: column;

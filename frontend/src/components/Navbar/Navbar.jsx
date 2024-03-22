@@ -50,9 +50,9 @@ const Navbar = () => {
             {toggle && (
               <motion.div
               initial={{ x: '100%' }}
-              animate={{ x: 10 }}
+              animate={{ x: 20 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 40, duration: 0.5 }}
+              transition={{ type: 'spring', stiffness: 50, duration: 0.5 }}
               >
                 <HiX onClick={() => setToggle(false)} />
                 <ul className='app__navbar-links'>

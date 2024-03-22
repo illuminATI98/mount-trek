@@ -2,13 +2,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
-  background: rgba($color: #2b4722, $alpha: 0.4);
+  padding: 0.1rem 2rem;
+  background: rgba($color: #000000, $alpha: 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba($color: #949494, $alpha: 0.2);
   position: fixed;
-  z-index: 2;
+  z-index: 900;
 }
 
 .app__navbar-topline{

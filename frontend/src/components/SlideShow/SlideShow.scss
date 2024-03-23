@@ -1,0 +1,78 @@
+.app__slideshow {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--primary-color); 
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  .app__slideshow-card-container {
+    display: flex;
+    cursor: grab; 
+    width: 100vw;
+    height: 30rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    
+    :active {
+      cursor: grabbing;
+    }
+    .app__slideshow-card {
+      width: 60vw;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+      margin-left: 20vw;
+      margin-right: 20vw;
+      border-radius: 1.5rem;
+      background-color: #4b5563; 
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+      transform-origin: left;
+    }
+
+  }
+}
+
+.app__slideshow-dots {
+  margin-top: 1rem; // Equivalent to mt-4 in Tailwind
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 0.5rem; // Equivalent to gap-2 in Tailwind
+
+  button {
+    height: 0.75rem; // Equivalent to h-3 in Tailwind
+    width: 0.75rem; // Equivalent to w-3 in Tailwind
+    border-radius: 50%; // Equivalent to rounded-full in Tailwind
+    transition: background-color 0.3s; // Transition for color change
+
+    &.active {
+      background-color: #83b0e0; 
+    }
+
+    &:not(.active) {
+      background-color: #075ecf; 
+    }
+  }
+}
+
+
+
+.app__slideshow-card-img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.app__slideshow-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  min-height: 30rem;
+  background-color: rgb(97, 97, 97);
+}

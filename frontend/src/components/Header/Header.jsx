@@ -13,34 +13,33 @@ const Header = () => {
     const textX = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
   
     return (
-      <div
-        ref={ref}
-        className="app__header"
-      >
-        <motion.div
-          className="app__headerbg1" 
-          style={{
-              y: background1Y,
-            }}
-        />
-        <motion.div
-          className="app__headerbg2"
-          style={{
-              y: background2Y,
-            }}
-        />
-        <div
-          className="app__headerbg3"
-        />
-
-        <motion.div
+        <section
+          ref={ref}
+          className="app__header"
+        >
+          <motion.div
+            className="app__headerbg1" 
+            style={{
+                y: background1Y,
+              }}
+          />
+          <motion.div
+            className="app__headerbg2"
+            style={{
+                y: background2Y,
+              }}
+          />
+          <div
+            className="app__headerbg3"
+          />
+          <motion.div
             style={{ x: textX }}
             className="app__header-text" 
-        >
+          >
             <h1>Welcome to MountTrek</h1>
             <h2>Scroll down to explore</h2>
-        </motion.div>
-      </div>
+          </motion.div>
+        </section>
     );
 }
 

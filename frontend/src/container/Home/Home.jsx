@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.scss'; 
 import { images } from "../../constants";
 import { AnimatePresence, motion } from "framer-motion";
-import { Header, TourCard } from '../../components';
+import { Header, TourCard, SlideShow } from '../../components';
 
 const Home = () => {
 
@@ -39,12 +39,14 @@ const Home = () => {
 
   return (
       <div className="app__home">
-          <Header />
-          <div className='app_home-card-container'>
+        <Header />
+        
+        <SlideShow />
+        <div className='app_home-card-container'>
                 {tours.map(tour => (
                     <TourCard key={tour.id} tour={tour}/>
                 ))}
-          </div>
+        </div>
       </div>
   );
 }

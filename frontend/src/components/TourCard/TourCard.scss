@@ -1,48 +1,89 @@
-.tourCard {
-  width: 300px;
-  border-radius: 8px;
-  background-color: var(--brown-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin-bottom: 20px;
+.app__tourCard {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 8px;
+    background-color: var(--brown-color);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    color: var(--lightgray-color);
+    overflow: hidden;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 
-  .tourCard-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-  }
+    .app__tourCard-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        cursor: pointer;
 
-  .tourCard-content {
-      padding: 20px;
-  }
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 100px 100px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transition: 0.5s ease-in-out;
+        }
+    }
 
-  .tourCard-title {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-  }
+    .app__tourCard-content {
+        display: flex;
+        flex-direction: column;
+    }
 
-  .tourCard-description {
-      font-size: 1rem;
-      margin-bottom: 10px;
-  }
+    .app__tourCard-availability{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        height: 2rem;
+        border-top-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background: rgba($color: #000000, $alpha: 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
 
-  .tourCard-price {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-  }
+    .app__tourCard-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        height: 4rem;
+        border-bottom: 1px solid var(--gray-color);
+    }
 
-  .tourCard-button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    .app__tourCard-description {
+        font-size: 1rem;
+        padding: 0.5rem;
+        height: 5rem;
+        border-bottom: 1px solid var(--gray-color);
+    }
 
-      &:hover {
-          background-color: #0056b3;
-      }
-  }
+    .app__tourCard-info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+
+    .app__tourCard-info-date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+        width: 200px;
+        border-right: 1px solid var(--gray-color);
+    }
+
+    .app__tourCard-info-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 0.5rem;
+        width: 100px;
+    }
 }

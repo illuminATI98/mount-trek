@@ -11,29 +11,33 @@ const Home = () => {
             id: 1,
             title: 'City Tour',
             description: 'Explore the city with our guided tour.',
+            date: "2024.04.20.",
             price: 50,
-            image: {}
+            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
         },
         {
             id: 2,
             title: 'Mountain Hike',
             description: 'Hike through breathtaking mountain trails.',
+            date: "2024.04.20.",
             price: 75,
-            image: {}
+            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
         },
         {
             id: 3,
             title: 'City Tour',
             description: 'Explore the city with our guided tour.',
+            date: "2024.04.20.",
             price: 50,
-            image: {}
+            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
         },
         {
             id: 4,
             title: 'Mountain Hike',
             description: 'Hike through breathtaking mountain trails.',
+            date: "2024.04.20.",
             price: 75,
-            image: {}
+            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
         },
     ];
 
@@ -42,7 +46,7 @@ const Home = () => {
         <Header />
         
         <SlideShow />
-        <div className='app_home-card-container'>
+        <div className='app__home-card-container'>
                 {tours.map(tour => (
                     <TourCard key={tour.id} tour={tour}/>
                 ))}

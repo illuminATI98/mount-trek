@@ -1,6 +1,6 @@
 import './App.scss'
 import { Navbar, Footer, Header} from './components';
-import { Home } from './container';
+import { Home } from './pages';
 
 function App() {
   

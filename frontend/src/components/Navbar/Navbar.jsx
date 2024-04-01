@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import { images } from "../../constants";
 import {HiMenu, HiX} from "react-icons/hi";
 import { FaInstagram, FaFacebookSquare, FaPhone  } from "react-icons/fa";
-import { MdAlternateEmail } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
 
       <menu className='app__navbar-topline'>
         <div className='app__navbar-contacts'>
-          <span> <MdAlternateEmail /> contact@mounttrek.hu</span>
+          <span> <MdEmail /> contact@mounttrek.hu</span>
           <span> <FaPhone /> +36 1 234 5678</span>
         </div>
         <div className='app__navbar-socials'>

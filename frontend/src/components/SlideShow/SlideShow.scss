@@ -33,24 +33,24 @@
 }
 
 .app__slideshow-dots {
-  margin-top: 1rem; // Equivalent to mt-4 in Tailwind
+  margin-top: 0.5rem; 
+  margin-bottom: 1rem;
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 0.5rem; // Equivalent to gap-2 in Tailwind
+  gap: 0.5rem; 
 
   button {
-    height: 0.75rem; // Equivalent to h-3 in Tailwind
-    width: 0.75rem; // Equivalent to w-3 in Tailwind
-    border-radius: 50%; // Equivalent to rounded-full in Tailwind
-    transition: background-color 0.3s; // Transition for color change
+    height: 0.75rem; 
+    width: 0.75rem; 
+    border-radius: 50%; 
+    border: 1px solid rgb(99, 99, 99);
+    transition: background-color 0.3s; 
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-    &.active {
-      background-color: #83b0e0; 
-    }
-
-    &:not(.active) {
-      background-color: #075ecf; 
+    &:hover {
+      background-color: gray;
     }
   }
 }

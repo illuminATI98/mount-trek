@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Footer.scss'
 import { FaFacebook, FaInstagram, FaPhone} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -27,13 +28,21 @@ const Footer = () => {
             </div>
           </div>
           <div className='footer-links'>
-              <ul>
-                {["Kezdőlap", "Túrák", "Rólunk", "Galéria", "Kapcsolat"].map((item) => (
-                  <li key={`link-${item}`}>
-                    <a href={`#${item}`} >{item}</a>
-                  </li>
-                  ))}
-              </ul>
+          <nav>
+          <ul className='app__navbar-links'>
+            {[
+              { name: "Kezdőlap", path: "/" },
+              { name: "Túrák", path: "/tours" },
+              { name: "Rólunk", path: "/about" },
+              { name: "Galéria", path: "/gallery" },
+              { name: "Kapcsolat", path: "/contact" }
+            ].map((item) => (
+              <li key={`link-${item.name}`}>
+                <Link to={item.path}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
             </div>
         </div>
         <div className='footer-bottom'>

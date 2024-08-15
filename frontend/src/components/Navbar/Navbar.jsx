@@ -1,4 +1,5 @@
 import { React , useState } from 'react'
+import { Link } from 'react-router-dom';
 import "./Navbar.scss";
 import { images } from "../../constants";
 import {HiMenu, HiX} from "react-icons/hi";
@@ -37,13 +38,22 @@ const Navbar = () => {
           <img src={images.logo} alt="logo" />
         </div>
 
-        <ul className='app__navbar-links'>
-          {["Kezdőlap", "Túrák", "Rólunk", "Információk", "Galéria", "Kapcsolat"].map((item) => (
-            <li className='app__flex p-text' key={`link-${item}`}>
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          ))}
-        </ul>
+        <nav>
+          <ul className='app__navbar-links'>
+            {[
+              { name: "Kezdőlap", path: "/" },
+              { name: "Túrák", path: "/tours" },
+              { name: "Rólunk", path: "/about" },
+              { name: "Információk", path: "/informations" },
+              { name: "Galéria", path: "/gallery" },
+              { name: "Kapcsolat", path: "/contact" }
+            ].map((item) => (
+              <li className='app__flex p-text' key={`link-${item.name}`}>
+                <Link to={item.path}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <div className='app__navbar-menu'>
           <HiMenu onClick={() => setToggle(true)}/>
           <AnimatePresence>
@@ -55,13 +65,22 @@ const Navbar = () => {
               transition={{ type: 'spring', stiffness: 50, duration: 0.5 }}
               >
                 <HiX onClick={() => setToggle(false)} />
-                <ul className='app__navbar-links'>
-                  {["Kezdőlap", "Túrák", "Rólunk", "Információk", "Galéria", "Kapcsolat"].map((item) => (
-                    <li key={`link-${item}`}>
-                      <a href="#" onClick={() => setToggle(false)}>{item}</a>
-                    </li>
+                <nav>
+                  <ul className='app__navbar-links'>
+                    {[
+                      { name: "Kezdőlap", path: "/" },
+                      { name: "Túrák", path: "/tours" },
+                      { name: "Rólunk", path: "/about" },
+                      { name: "Információk", path: "/informations" },
+                      { name: "Galéria", path: "/gallery" },
+                      { name: "Kapcsolat", path: "/contact" }
+                    ].map((item) => (
+                      <li  key={`link-${item.name}`}>
+                        <Link to={item.path} onClick={() => setToggle(false)}>{item.name}</Link>
+                      </li>
                     ))}
-                </ul>
+                  </ul>
+                </nav>
               </motion.div>
             )}
           </AnimatePresence>

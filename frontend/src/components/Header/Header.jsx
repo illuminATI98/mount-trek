@@ -36,8 +36,8 @@ const Header = () => {
             style={{ x: textX }}
             className="app__header-text" 
           >
-            <h1>Welcome to MountTrek</h1>
-            <h2>Scroll down to explore</h2>
+            <h1>MountTrek</h1>
+            <h2>Hegyvidéki Túrák Európában</h2>
           </motion.div>
         </section>
     );

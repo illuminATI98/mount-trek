@@ -3,44 +3,21 @@ import './Home.scss';
 import { images } from "../../constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { Header, TourCard, SlideShow } from '../../components';
+import { urlFor, client } from "../../../client";
 
 const Home = () => {
+    const [tours, setTours] = useState([]);
 
-    const tours = [
-        {
-            id: 1,
-            title: 'City Tour',
-            description: 'Explore the city with our guided tour.',
-            date: "2024.04.20.",
-            price: 50,
-            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
-        },
-        {
-            id: 2,
-            title: 'Mountain Hike',
-            description: 'Hike through breathtaking mountain trails.',
-            date: "2024.04.20.",
-            price: 75,
-            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
-        },
-        {
-            id: 3,
-            title: 'City Tour',
-            description: 'Explore the city with our guided tour.',
-            date: "2024.04.20.",
-            price: 50,
-            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
-        },
-        {
-            id: 4,
-            title: 'Mountain Hike',
-            description: 'Hike through breathtaking mountain trails.',
-            date: "2024.04.20.",
-            price: 75,
-            image: "https://cdn-production.checkfront.com/wp-content/uploads/2021/07/marketing-tours-online-with-woman-traveling-by-boat-in-thailand.jpeg"
-        },
-    ];
 
+    useEffect(() => {
+        const query = "*[_type == 'tour']";
+
+        client.fetch(query)
+            .then((data) => {
+                setTours(data);
+            })
+    }, [])
+   
   return (
       <div className="app__home">
         <Header />
@@ -48,7 +25,7 @@ const Home = () => {
         <SlideShow />
         <div className='app__home-card-container'>
                 {tours.map(tour => (
-                    <TourCard key={tour.id} tour={tour}/>
+                    <TourCard key={tours.indexOf(tour)} tour={tour}/>
                 ))}
         </div>
       </div>

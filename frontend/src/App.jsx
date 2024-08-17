@@ -2,7 +2,7 @@ import './App.scss'
 import React from 'react';
 import { BrowserRouter as Router, Route,  Routes} from 'react-router-dom';
 import { Navbar, Footer, Header} from './components';
-import { Home,  About, Contact, Gallery, Informations, Tours} from './pages';
+import { Home,  About, Contact, Gallery, Informations, Tours, Tour} from './pages';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/informations" element={<Informations />} />
           <Route path="/tours" element={<Tours />} />
+          <Route path="/tour/:id" element={<Tour />} />
         </Routes>
         <Footer />
       </div>

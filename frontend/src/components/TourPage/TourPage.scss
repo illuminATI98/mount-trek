@@ -2,5 +2,76 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--primary-color);
+  background: linear-gradient(90deg, rgba(33,37,38,1) 0%, rgba(48,52,54,1) 50%, rgba(33,37,38,1) 100%);
+  width: 100%;
+  
+  .app__tourPage-thumbnail{
+    display: flex;
+    width: 100%;
+    height: 25rem;
+    align-items: center;
+    justify-content: center;
+    
+    img{
+      height: 120%;
+    }
+    .app__tourPage-title{
+      display: flex;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      margin-top: 5rem;
+    }
+  }
+  
+  .app__tourPage-image{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  .app__tourPage-navigation{
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      li{
+        display: flex;
+        position: relative;
+        margin-right: 2rem;
+  
+        button{
+          background-color: var(--gray-color);
+          border: none;
+          color: var(--lightGray-color);
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 10px 10px 0px 0px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px;
+        }
+      }
+    }
+  }
+  .app__tourPage-details{
+    width: 60%;
+    height: 20rem;
+    background-color: var(--gray-color);
+    border-top: 5px solid var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+
+    margin-bottom: 5rem;
+  }
 }

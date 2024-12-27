@@ -6,19 +6,19 @@
   overflow: hidden;
   justify-content: center;
   align-items: center;
-
+  
   .app__headerbg1 {
     position: absolute;
-    inset: 0;
+    inset: 0px;
     background-image: url("/headerbg1.jpg");
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
     z-index: 0;
   }
   
   .app__headerbg2 {
     position: absolute;
-    inset: 0;
+    inset: 0px;
     background-image: url("/headerbg2.png");
     background-position: bottom;
     background-size: cover;

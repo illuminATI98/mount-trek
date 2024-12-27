@@ -7,6 +7,7 @@ const Header = () => {
     const { scrollYProgress } = useScroll({
       target: ref,
       offset: ["start start", "end start"],
+      
     });
     const background1Y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
     const background2Y = useTransform(scrollYProgress, [0, 1], ["0%", "70%"]);

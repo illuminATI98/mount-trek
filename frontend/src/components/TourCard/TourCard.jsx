@@ -20,10 +20,8 @@ const TourCard = ({ tour }) => {
     return (
         
         
-            <motion.div 
+            <div 
                 className="app__tourCard"
-                whileInView={{y:[100,0], opacity:[0,1]}}
-                transition={{duration: 0.5}}
                 key={tour.id}
             >
                 <p className={tour.availability === true ?"app__tourCard-availability true" : "app__tourCard-availability false"}>{tour.availability === true ?"Available" : "Unavailable"}</p>
@@ -48,7 +46,7 @@ const TourCard = ({ tour }) => {
                         <div className='app__tourCard-info-price'>€{tour.price}</div>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         
     );
 };

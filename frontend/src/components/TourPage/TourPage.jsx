@@ -20,14 +20,27 @@ const TourPage = ({ tour }) => {
   return (
     <div className='app__tourPage'>
       <div className='app__tourPage-thumbnail'>
-        
-        <h1>{tour.name}</h1>
+        <img src={thumbnailUrl} alt={tour.name} className="app__tourPage-image" />
+        <h1 className='app__tourPage-title'>{tour.name}</h1>
       </div>
-
-
-      <PortableText
-        value={tour.details}
-      />
+      <div className='app__tourPage-navigation'>
+        <ul>
+          {[
+            { name: "Részletek"},
+            { name: "Program"},
+            { name: "További tudnivalók"},
+          ].map((item) => (
+            <li className='app__flex p-text' key={`link-${item.name}`}>
+              <button >{item.name}</button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className='app__tourPage-details'>
+        <PortableText
+          value={tour.details}
+        />
+      </div>
     </div>
   )
 }

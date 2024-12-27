@@ -22,7 +22,7 @@ const Home = () => {
       <div className="app__home">
         <Header />
         
-        <SlideShow />
+        
         <div className='app__home-card-container'>
                 {tours.map(tour => (
                     <TourCard key={tours.indexOf(tour)} tour={tour}/>

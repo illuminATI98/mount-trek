@@ -15,10 +15,8 @@ const Tour = () => {
             .then((data) => {
                 setTours(data);
             })
-    }, [])
+    }, [tours.length])
     
-  
-     console.log(tour)
   if (!tour) {
       return (<div className='app__page'>
         <p>No tour data found!</p>

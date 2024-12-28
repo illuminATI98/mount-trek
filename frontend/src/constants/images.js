@@ -1,6 +1,5 @@
-import logo from '../assets/logo.png';
-
-import footerbg from "../assets/footerbg.jpg";
+import logo from '../../public/logo.png';
+import footerbg from "../../public/footerbg.jpg";
 
 
 export default {

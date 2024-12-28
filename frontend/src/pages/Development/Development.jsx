@@ -4,12 +4,9 @@ import './Development.scss'
 import { images } from "../../constants";
 
 const development = () => {
-  const box = {
-    width: 100,
-    height: 100,
-    backgroundImage:("/logo.png"),
-    borderRadius: 5,
-}
+  const openGoogleSheetPage = () => {
+    window.open('https://docs.google.com/spreadsheets/d/1SI4Ifunb7cjN8yZi0d6xEie6kgufLkhFl-OM-a0QL3E/edit?gid=0#gid=0', '_blank');
+  };
 
   return (
     <div className='app__development'>
@@ -32,8 +29,9 @@ const development = () => {
         <img className='app__development-logo' src={images.logo} alt="logo"/>
         <div className='app__development-text'>
           Az oldal karbantartás alatt van...
-          
+          Az alábbi linken megtekintheti a túranaptárunkat
         </div>
+        <a onClick={openGoogleSheetPage} className='app__development-button'>Naptár</a>
       </div>
     </div>
   )

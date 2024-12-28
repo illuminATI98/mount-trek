@@ -36,5 +36,24 @@
   margin-bottom: 10rem;
 }
 .app__development-text {
-  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  font-size: larger;
+  margin-top: 15rem;
+}
+.app__development-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  color: #000000;
+  font-size: large;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 2rem;
 }
